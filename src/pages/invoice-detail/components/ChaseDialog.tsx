@@ -21,7 +21,7 @@ export function ChaseDialog({
 }: ChaseDialogProps) {
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="min-w-2xl">
+      <DialogContent className="md:min-w-2xl">
         <DialogHeader>
           <DialogTitle>#{invoiceData.invoiceNumber}</DialogTitle>
         </DialogHeader>
