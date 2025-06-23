@@ -9,7 +9,7 @@ import { calculateInvoiceTotalAmount, toLocaleString } from "@/lib/utils";
 export interface ChaseDialogProps {
   open?: boolean;
   invoiceData: App.InvoiceItem;
-  clientData: App.ClientItem | null;
+  clientData: App.ClientItem;
   onClose?: () => void;
 }
 
@@ -28,12 +28,11 @@ export function ChaseDialog({
         <div className="font-sans p-4 bg-white border rounded shadow-md">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-bold text-gray-800">
-              Subject: Reminder: Invoice #{invoiceData.invoiceNumber} - Payment
-              Due
+              Reminder: Invoice #{invoiceData.invoiceNumber} - Payment Due
             </h2>
           </div>
           <p className="text-gray-800 mb-4">
-            Dear {clientData?.name || "Client"},
+            Dear {clientData.name},
             <br />
             <br />I hope this email finds you well. We would like to kindly
             remind you that invoice #{invoiceData.invoiceNumber}, amounting to{" "}

@@ -36,7 +36,7 @@ export default function InvoiceDetailPage() {
     }
   }, [invoiceNumber]);
 
-  if (!invoiceData) {
+  if (!invoiceData || !clientData) {
     return (
       <div className="h-[70vh] flex justify-center items-start pt-20">
         <h1 className="text-5xl font-bold">Invoice No found</h1>
@@ -61,7 +61,7 @@ export default function InvoiceDetailPage() {
           </div>
           <div className="flex flex-col gap-y-2">
             <h3 className="font-semibold">Client Name</h3>
-            <p>{clientData?.name}</p>
+            <p>{clientData.name}</p>
           </div>
           <div className="flex flex-col gap-y-2">
             <h3 className="font-semibold">Total Amount Due</h3>
